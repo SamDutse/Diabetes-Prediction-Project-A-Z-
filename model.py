@@ -1,6 +1,6 @@
 # importing pandas
 import pandas as pd
-
+import joblib
 # Load the dataset
 data = pd.read_csv('diabetes.csv')
 
@@ -46,3 +46,8 @@ print(f"Accuracy: {accuracy}")
 print(f"Precision: {precision}")
 print(f"Recall: {recall}")
 print(f"F1 Score: {f1}")
+
+
+# Save the model and the scaler
+joblib.dump(model, 'diabetes_model.pkl')
+joblib.dump(scaler, 'scaler.pkl')
